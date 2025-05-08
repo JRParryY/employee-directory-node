@@ -47,11 +47,10 @@ app.get('*', (req, res) => {
 });
 
 // === Database Connection and Server Initialization ===
-// MongoDB connection string that specifies the employee_directory database
-const mongoURI = process.env.MONGODB_URI;
-
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+const mongoURI = process.env.MONGODB_URI;
 
 mongoose.connect(mongoURI)
   .then(() => {
