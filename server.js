@@ -1,11 +1,14 @@
 /**
- * Incremental server for deployment testing
+ * Complete server for Employee Directory API
  */
 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+
+// Import employee routes
+const employeeRoutes = require('./routes/employeeRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5202;
@@ -17,7 +20,9 @@ app.use(express.json());
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API endpoint
+// API endpoints
+app.use('/api/employees', employeeRoutes);
+
 app.get('/api', (req, res) => {
   res.json({ message: 'API is running!' });
 });
