@@ -2,6 +2,9 @@
  * Simple server for Employee Directory API
  */
 
+// Load environment variables from .env file
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -27,7 +30,7 @@ app.get('/api', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://demo_user:Emp10Y33PaSs@employeedirectory.bhzxu4j.mongodb.net/employee_directory?retryWrites=true&w=majority';
+const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://jparr4:jparr4@cluster1.lqo9sxo.mongodb.net/employee_directory?retryWrites=true&w=majority&appName=Cluster1';
 
 mongoose.connect(mongoURI)
   .then(() => {
