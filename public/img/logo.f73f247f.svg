@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="150 120 300 180" width="300" height="180">
+  <!-- Background - transparent -->
+  <rect width="600" height="800" fill="transparent" />
+  
+  <!-- ID Card -->
+  <g transform="translate(200, 150)">
+    <!-- Card Body -->
+    <rect x="0" y="30" width="200" height="140" rx="20" ry="20" fill="#1cbcb8" />
+    
+    <!-- Card Top -->
+    <rect x="80" y="0" width="40" height="30" rx="8" ry="8" fill="#1cbcb8" />
+    
+    <!-- Avatar -->
+    <circle cx="60" cy="95" r="40" fill="#004e54" />
+    
+    <!-- ID Details Lines -->
+    <rect x="110" y="75" width="70" height="14" rx="7" ry="7" fill="#004e54" />
+    <rect x="110" y="105" width="70" height="14" rx="7" ry="7" fill="#004e54" />
+  </g>
+</svg> 
