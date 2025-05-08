@@ -10,11 +10,12 @@ const cors = require('cors');         // Middleware to enable CORS
 const path = require('path');
 
 // Import route handlers
-
 const employeeRoutes = require('./routes/employeeRoutes');
+
 // Initialize Express application
 const app = express();
-// Set the port for the server to listen on (5202 if no environment variable is set)
+
+// Set the port for the server to listen on (use Heroku's PORT env var or 5202 locally)
 const PORT = process.env.PORT || 5202;
 
 // === Middleware Configuration ===
@@ -22,45 +23,42 @@ const PORT = process.env.PORT || 5202;
 app.use(cors());
 // Parse incoming JSON requests and place the data in req.body
 app.use(express.json());
+// Serve static files from the public directory (this MUST come before routes)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// === Route Registration ===
+// === API Routes Registration ===
 // Mount the employee routes under the /api/employees path
 app.use('/api/employees', employeeRoutes);
 
 // Root route to confirm the server is running
-app.get('/', (req, res) => {
-  res.send('Server is running!');
+app.get('/api', (req, res) => {
+  res.send('API is running!');
 });
 
-
-app.get("/test", (req, res) => {
+// Test route
+app.get("/api/test", (req, res) => {
   res.send("Hello");
 });
 
-// === SPA fallback: only serve index.html for non-API routes ===
-app.get('*', (req, res) => {
-  if (req.originalUrl.startsWith('/api/')) {
-    res.status(404).send('API route not found');
-  } else {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  }
-});
-
 // === Database Connection and Server Initialization ===
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
-
 const mongoURI = process.env.MONGODB_URI;
 
+// Connect to MongoDB and start server only after successful connection
 mongoose.connect(mongoURI)
   .then(() => {
-    // On successful connection:
     console.log('✅ Connected to MongoDB (employee_directory database)');
-
-    // Start the Express server
-    app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+    
+    // Start the Express server AFTER MongoDB connection is established
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
   })
   .catch((err) => {
-    // Handle connection errors
     console.error('❌ MongoDB connection error:', err);
-  }); 
+  });
+
+// SPA fallback route - MUST BE THE LAST ROUTE
+// This serves index.html for any routes not matched above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+}); 
