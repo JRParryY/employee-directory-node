@@ -43,10 +43,6 @@ const mongoURI = process.env.MONGODB_URI;
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
-// For SPA routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 // Connect to MongoDB using Mongoose
 mongoose.connect(mongoURI)
@@ -59,4 +55,13 @@ mongoose.connect(mongoURI)
   .catch((err) => {
     // Handle connection errors
     console.error('❌ MongoDB connection error:', err);
-  }); 
+  });
+
+// SPA fallback: only serve index.html for non-API routes
+app.get('*', (req, res) => {
+  if (req.originalUrl.startsWith('/api/')) {
+    res.status(404).send('API route not found');
+  } else {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  }
+}); 
