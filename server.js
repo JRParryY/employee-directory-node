@@ -50,6 +50,7 @@ mongoose.connect(mongoURI)
   });
 
 // SPA fallback route - must be after API routes
-app.get('*', (req, res) => {
+// Use a simple string path instead of a wildcard pattern to avoid path-to-regexp errors
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 }); 
