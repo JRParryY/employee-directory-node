@@ -30,7 +30,13 @@ app.get('/api', (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://jparr4:jparr4@cluster1.lqo9sxo.mongodb.net/employee_directory?retryWrites=true&w=majority&appName=Cluster1';
+// Make sure MONGODB_URI is set in your .env file
+const mongoURI = process.env.MONGODB_URI;
+
+if (!mongoURI) {
+  console.error('❌ MongoDB URI is not defined in environment variables');
+  process.exit(1);
+}
 
 mongoose.connect(mongoURI)
   .then(() => {
@@ -41,6 +47,7 @@ mongoose.connect(mongoURI)
   })
   .catch((err) => {
     console.error('❌ MongoDB connection error:', err);
+    console.log('Starting server without MongoDB connection.');
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT} (without MongoDB)`);
     });
