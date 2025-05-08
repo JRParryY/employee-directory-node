@@ -32,7 +32,7 @@ app.use('/api/employees', employeeRoutes);
 
 // Root route to confirm the server is running
 app.get('/api', (req, res) => {
-  res.send('API is running!');
+  res.json({ message: 'API is running!' });
 });
 
 // Test route
@@ -46,7 +46,7 @@ const mongoURI = process.env.MONGODB_URI;
 // Connect to MongoDB and start server only after successful connection
 mongoose.connect(mongoURI)
   .then(() => {
-    console.log('✅ Connected to MongoDB (employee_directory database)');
+    console.log('✅ Connected to MongoDB');
     
     // Start the Express server AFTER MongoDB connection is established
     app.listen(PORT, () => {
