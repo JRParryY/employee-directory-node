@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        #app {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .redirect-message {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 18px;
+        }
+        .loading {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 24px;
+            color: #1cbcb8;
+        }
+        .spinner {
+            display: inline-block;
+            margin-right: 10px;
+            animation: spin 1s infinite linear;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="loading">
+            <span class="spinner"><i class="fas fa-circle-notch"></i></span>
+            Loading Employee Directory...
+        </div>
+        <div class="redirect-message">
+            If you're not redirected automatically, please visit the 
+            <a href="https://simple-employee-directory-8c9bb400b351.herokuapp.com/employees">deployed Employee Directory app</a>.
+        </div>
+    </div>
+
+    <script>
+        // This page is a placeholder. In a production environment,
+        // the Vue.js app would be built and served from this location.
+        // For this assignment, we'll redirect to the deployed app.
+        setTimeout(function() {
+            window.location.href = 'https://simple-employee-directory-8c9bb400b351.herokuapp.com/employees';
+        }, 3000);
+    </script>
+</body>
+</html>

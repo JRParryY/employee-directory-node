@@ -1,1 +1,202 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg"><title>Employee Directory</title><script defer="defer" src="/js/chunk-vendors.7ea18e87.js"></script><script defer="defer" src="/js/app.48310ba0.js"></script><link href="/css/app.b8a349c2.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but Employee Directory doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#about" id="about-link">About</a></li>
+                <li><a href="#projects" id="projects-link">Projects</a></li>
+                <li><a href="#skills" id="skills-link">Skills</a></li>
+                <li><a href="#work" id="work-link">Work Experience</a></li>
+                <li><a href="#contact" id="contact-link">Contact</a></li>
+                <li><a href="#references" id="references-link">References</a></li>
+                <li><a href="/employees" id="employee-directory-link">Employee Directory App</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#" class="mobile-link">Home</a></li>
+                <li><a href="#about" class="mobile-link">About</a></li>
+                <li><a href="#projects" class="mobile-link">Projects</a></li>
+                <li><a href="#skills" class="mobile-link">Skills</a></li>
+                <li><a href="#work" class="mobile-link">Work Experience</a></li>
+                <li><a href="#contact" class="mobile-link">Contact</a></li>
+                <li><a href="#references" class="mobile-link">References</a></li>
+                <li><a href="/employees" class="mobile-link">Employee Directory App</a></li>
+            </ul>
+        </div>
+        <!-- Close menu overlay - appears behind the navigation -->
+        <label for="menu-toggle" class="menu-overlay"></label>
+    </header>
+    <section class="container">
+        <div class="profile-box" id="about">
+            <img src="DP.png" alt="Profile Photo" class="profile-photo">
+            <div class="profile-info">
+                <h2>Josep Parry</h2>
+                <p>Full Stack Developer</p>
+            </div>
+        </div>
+        <div class="about-box">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.  Pellentesque euismod, nisi eu consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.  Pellentesque euismod, nisi eu consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur</p>
+        </div>
+        <div class="projects-box" id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <img src="Project1.png" alt="Project 1" class="project-img">
+                <div class="project-details">
+                    <h3>Employee Directory App</h3>
+                    <p>A full-stack application built with Vue.js, Node.js, and MongoDB to manage employee information. Features include viewing, searching, adding, and deleting employee records.</p>
+                    <a href="/employees"><button class="project-btn">View Project</button></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="Project2.png" alt="Project 2" class="project-img">
+                <div class="project-details">
+                    <h3>Project Name</h3>
+                    <p>Nullam consectetur, dui et venenatis gravida, neque ipsum tincidunt est. Aenean non lorem in felis volutpat laoreet sit amet in nisi.</p>
+                    <button class="project-btn">Project Info</button>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="Project3.png" alt="Project 3" class="project-img">
+                <div class="project-details">
+                    <h3>Project Name</h3>
+                    <p>Aliquam erat volutpat. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum nisi nisl euismod enim.</p>
+                    <button class="project-btn">Project Info</button>
+                </div>
+            </div>
+        </div>
+        <div class="skills-box" id="skills">
+            <div class="skills-section">
+                <h2>Skills</h2>
+                <hr>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                    <li>Sed do eiusmod tempor incididunt ut labore et dolore</li>
+                    <li>Ut enim ad minim veniam, quis nostrud exercitation</li>
+                    <li>Duis aute irure dolor in reprehenderit in voluptate</li>
+                </ul>
+            </div>
+            <div class="skills-section">
+                <h2>Education</h2>
+                <hr>
+                <ul>
+                    <li>Bachelor of Science in Lorem Ipsum - University of Lorem (2018-2022)</li>
+                    <li>High School Diploma - Lorem Academy (2014-2018)</li>
+                </ul>
+            </div>
+            <div class="skills-section">
+                <h2>Certifications</h2>
+                <hr>
+                <ul>
+                    <li>Advanced Lorem Ipsum Certification - Lorem Institute (2023)</li>
+                    <li>Professional Dolor Sit Development - Amet Academy (2022)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <div class="bottom-row">
+                <div class="work-box" id="work">
+                    <h2>Work Experience</h2>
+                    <hr>
+                    <div class="job-entry">
+                        <div class="job-title">Software Engineer Intern</div>
+                        <div class="job-company">Amazon LLC | 2024 - Present</div>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</li>
+                            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</li>
+                            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</li>
+                            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</li>
+                        </ul>
+                    </div>
+                    <div class="job-entry">
+                        <div class="job-title">Software Engineer Intern</div>
+                        <div class="job-company">Ipsum Solutions Ltd. | 2023 - 2024</div>
+                        <ul>
+                            <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</li>
+                            <li>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</li>
+                            <li>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</li>
+                            <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</li>
+                        </ul>
+                    </div>
+                    <div class="job-entry">
+                        <div class="job-title">Technical Product Manager</div>
+                        <div class="job-company">Dolor Digital Agency | 2016 - 2018</div>
+                        <ul>
+                            <li>Et harum quidem rerum facilis est et expedita distinctio nam libero tempore, cum soluta nobis.</li>
+                            <li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut.</li>
+                            <li>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores.</li>
+                            <li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-box">
+                    <h2>Blog Posts</h2>
+                    <div class="blog-post">
+                        <h3>Latest Technologies in Web Development</h3>
+                        <div class="blog-date">March 15, 2024</div>
+                        <p>Consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porta condimentum velit, et tempus lorem iaculis id. Sed viverra ipsum erat, eget imperdiet ex rhoncus vitae. Cras ultricies, nunc vitae efficitur luctus.</p>
+                    </div>
+                    <div class="blog-post">
+                        <h3>The Future of AI in Software</h3>
+                        <div class="blog-date">March 1, 2024</div>
+                        <p>Neque ipsum tincidunt est, nec vestibulum nisi risus quis leo. Aenean non lorem in felis volutpat laoreet sit amet in nisi. Cras eget semper augue, sit amet hendrerit dolor.</p>
+                    </div>
+                    <div class="blog-post">
+                        <h3>Working at Big Tech Companies</h3>
+                        <div class="blog-date">February 15, 2024</div>
+                        <p>Vivamus lacinia odio vitae vestibulum vestibulum. Cras porta condimentum velit, et tempus lorem iaculis id. Sed viverra ipsum erat, eget imperdiet ex rhoncus vitae. Cras ultricies, nunc vitae efficitur luctus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-row">
+                <div class="contacts-box" id="contact">
+                    <h2>Contact</h2>
+                    <ul class="contact-list">
+                        <li>✉️ email@example.com</li>
+                        <li>📱 +1 (555) 123-4567</li>
+                        <li>🔗 linkedin.com/in/yourprofile</li>
+                        <li>📍 San Francisco, CA</li>
+                    </ul>
+                </div>
+                <div class="references-box" id="references">
+                    <h2>References</h2>
+                    <div class="reference-entry">
+                        <div class="ref-name">Dr. Jane Smith</div>
+                        <div class="ref-title">Senior Technical Lead</div>
+                        <div class="ref-company">Lorem Technologies Inc.</div>
+                    </div>
+                    <div class="reference-entry">
+                        <div class="ref-name">John Doe</div>
+                        <div class="ref-title">Development Manager</div>
+                        <div class="ref-company">Acme Corp.</div>
+                    </div>
+                    <div class="reference-entry">
+                        <div class="ref-name">Emily White</div>
+                        <div class="ref-title">Project Supervisor</div>
+                        <div class="ref-company">Innovatech Solutions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Josep Parry. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

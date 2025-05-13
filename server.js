@@ -20,18 +20,28 @@ const PORT = process.env.PORT || 5202;
 app.use(cors());
 app.use(express.json());
 
+// Static file serving - crucial for SPA
+app.use(express.static(path.join(__dirname, 'public')));
+
 // API routes
 app.use('/api/employees', employeeRoutes);
 app.get('/api', (req, res) => {
   res.json({ message: 'API is running!' });
 });
 
-// Static file serving - crucial for SPA
-app.use(express.static(path.join(__dirname, 'public')));
+// Route for the Vue app at /employees
+app.get('/employees', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'employees', 'index.html'));
+});
+
+// Catch-all route to serve the portfolio site
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Connect to MongoDB
 // Make sure MONGODB_URI is set in your .env file
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = 'mongodb+srv://jparr4:jparr4@cluster1.lqo9sxo.mongodb.net/employee_directory?retryWrites=true&w=majority&appName=Cluster1';
 
 if (!mongoURI) {
   console.error('❌ MongoDB URI is not defined in environment variables');
