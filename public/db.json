@@ -1,0 +1,82 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "position": "Software Engineer",
+      "department": "Engineering",
+      "email": "john.doe@company.com",
+      "phone": "+1-555-123-4567",
+      "startDate": "2023-01-15",
+      "skills": ["JavaScript", "Vue.js", "Node.js"],
+      "projectCount": 5,
+      "profileImage": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "position": "Product Manager",
+      "department": "Product",
+      "email": "jane.smith@company.com",
+      "phone": "+1-555-234-5678",
+      "startDate": "2022-08-20",
+      "skills": ["Product Strategy", "Agile", "User Research"],
+      "projectCount": 8,
+      "profileImage": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "position": "UX Designer",
+      "department": "Design",
+      "email": "michael.j@company.com",
+      "phone": "+1-555-345-6789",
+      "startDate": "2023-03-10",
+      "skills": ["UI/UX", "Figma", "User Testing"],
+      "projectCount": 6,
+      "profileImage": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 4,
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "position": "Data Scientist",
+      "department": "Analytics",
+      "email": "emily.b@company.com",
+      "phone": "+1-555-456-7890",
+      "startDate": "2022-11-05",
+      "skills": ["Python", "Machine Learning", "SQL"],
+      "projectCount": 4,
+      "profileImage": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": 5,
+      "firstName": "David",
+      "lastName": "Wilson",
+      "position": "DevOps Engineer",
+      "department": "Operations",
+      "email": "david.w@company.com",
+      "phone": "+1-555-567-8901",
+      "startDate": "2023-02-15",
+      "skills": ["AWS", "Docker", "Kubernetes"],
+      "projectCount": 7,
+      "profileImage": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+      "id": 6,
+      "firstName": "Sarah",
+      "lastName": "Davis",
+      "position": "Marketing Manager",
+      "department": "Marketing",
+      "email": "sarah.d@company.com",
+      "phone": "+1-555-678-9012",
+      "startDate": "2022-09-01",
+      "skills": ["Digital Marketing", "Content Strategy", "Analytics"],
+      "projectCount": 9,
+      "profileImage": "https://randomuser.me/api/portraits/women/6.jpg"
+    }
+  ]
+} 
