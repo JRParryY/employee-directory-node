@@ -142,7 +142,7 @@ const server = http.createServer(async (req, res) => {
     }
     // Serve static files
     else {
-        let filePath = req.url === '/' ? '/index.html' : req.url;
+        let filePath = req.url === '/' ? '/portfolio.html' : req.url;
         filePath = path.join(__dirname, 'public', filePath);
 
         // Get file extension
@@ -172,9 +172,9 @@ const server = http.createServer(async (req, res) => {
                             }
                         });
                     } else {
-                        fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, content) => {
+                        fs.readFile(path.join(__dirname, 'public', 'portfolio.html'), (err, content) => {
                             if (err) {
-                                sendJsonResponse(res, 500, { message: 'Error loading index.html' });
+                                sendJsonResponse(res, 500, { message: 'Error loading portfolio.html' });
                             } else {
                                 res.writeHead(200, { 'Content-Type': 'text/html' });
                                 res.end(content);
